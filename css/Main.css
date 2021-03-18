@@ -1,0 +1,816 @@
+@import url('https://fonts.googleapis.com/css2?family=Trispace:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*{
+    padding: 0px;
+    margin:0;
+    box-sizing: border-box;
+}
+
+
+
+:root{
+    --color-primario: #ffffff;
+    --color-secundario: #f5f4f4;
+    --color-terciario: #c2c5c5;
+    --color-cuarto: #2a2e2e;
+    --azul-primario: #6AA6EA;
+    --azul-secundario: #2d79d1;
+    --azul-terciario: #0b51a1;
+    --oscuro-transparente: #000000b2;
+    --rojo-primario: #eb4848;
+    --rojo-secundario: #e22828;
+    --rojo-terciario: #ca0000;
+
+    --sombra-caja: 0px 10px 20px -5px var(--oscuro-transparente);
+    --sombra-caja-interna: 0px -15px 20px -20px var(--oscuro-transparente) inset;
+    --sombra-boton: 0px 0px 5px 0px var(--oscuro-transparente);
+
+
+    --gradiente-gris-PrimarioTerciario: linear-gradient(to bottom right, #ffffff 0%, #e2e4e4 100%);
+    --gradiente-GrisAzul: linear-gradient(to bottom right, #6AA6EA 0%, #e2e4e4 100%);
+    --gradiente-GrisRojo: linear-gradient(to bottom right, #eb4848 0%, #e2e4e4 100%);
+
+    --gradiente-azul-PrimarioSecundario: linear-gradient(to bottom right, #6AA6EA 0%, #2d79d1 100%);
+    --gradiente-azul-PrimarioTerciario: linear-gradient(to bottom right, #6AA6EA 0%, #0b51a1 100%);
+
+    --gradiente-rojo-PrimarioSecundario: linear-gradient(to bottom right, #eb4848 0%, #e22828 100%);
+    --gradiente-rojo-PrimarioTerciario: linear-gradient(to bottom right, #eb4848 0%, #ca0000 100%);
+}
+
+.container{
+    display:grid;
+    height: 100vh;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr 10fr;
+    grid-template-areas:
+    "hubble hubble"
+    "cuerpo noticias";
+    grid-gap: 0rem;
+}
+
+.hubble{
+    width: 100%;
+    height: 10vh;
+    grid-area: hubble;
+    box-shadow: var(--sombra-caja);
+    background-color: var(--color-primario);
+    padding: 1rem 2rem;
+    position: fixed; 
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    font-family: trispace;
+    font-size: 200%;
+    font-weight: 400;
+}
+
+.cuerpo{    
+    display: flex;
+    height: auto;
+    grid-area: cuerpo;
+    background-color: var(--color-secundario);
+    justify-content: center;
+    align-content: space-between;
+    flex-direction: column;
+    padding: 10vh 10rem;
+}
+
+.noticias{
+    display: flex;
+    grid-area: noticias;
+    height: auto;
+    background: var(--gradiente-gris-PrimarioTerciario);
+    justify-content: flex-start;
+    align-content: space-between;
+    flex-direction: column;
+    padding: 10vh 2rem;
+}
+
+
+
+
+
+.Descripcion{
+    width: 30rem;
+    height: 35rem;
+    display: inline-block;
+    background: var(--gradiente-azul-PrimarioTerciario);
+    margin-top: 4rem;
+    box-shadow: 0px 10px 20px -5px var(--oscuro-transparente);
+    border-radius: 10px;
+    font-family: Raleway;
+    font-weight: 700;
+    font-size: 120%;
+    letter-spacing: 0.1rem;
+    padding: 2rem;
+    color: rgb(255, 255, 255);
+}
+
+.tarjeta{
+    width:30rem;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    background-color: var(--color-primario);
+    margin-top: 4rem;
+    box-shadow: 0px 10px 20px -5px var(--oscuro-transparente);
+    border-radius: 5px 5px 5px 5px;
+}
+
+.imagen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+    text-justify: center;
+    font-size: medium;
+    font-weight: bold;
+    color:black;
+    width: 30rem;
+    height: 20rem;
+    background-color: var(--color-terciario);
+    border-radius: 5px 5px 0px 0px;
+}
+
+.datos{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    width: 30rem;
+    height: 15rem;
+    background-color: var(--color-primario);
+    border-radius: 0px 0px 5px 5px;
+}
+
+.titulo{ 
+    grid-area: noticias; 
+    color:black;
+    margin: 2rem 2rem 1.5rem 2rem;
+    justify-content: space-between;
+    font-size: medium;
+    font-family: Work Sans;
+    font-weight: 900;
+    font-size: 140%;
+    text-shadow: -1px 1px 1px darkgrey;    
+    letter-spacing: 0.1rem;
+}
+
+.descripcion{ 
+    grid-area: noticias;  
+    font-size: medium;
+    font-style: italic;
+    color:black;
+    margin: 0rem 2rem auto 3rem;
+    
+    vertical-align: middle;
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: 90%;
+    font-style: italic;
+    letter-spacing: 0.1rem;
+    grid-area: noticias;  
+    font-size: medium;
+    font-style: italic;
+    color:black;
+}
+
+.boton{
+    width: 100%;
+    height: 3rem;
+    background-color: var(--color-secundario);
+    border-radius: 0px 0px 5px 5px;
+    border:0;
+    font-weight: bold;
+    color: var(--azul-secundario);
+    outline: none;
+    font-family: Quicksand;
+    font-weight: 700;
+    font-size: 110%;
+}
+
+
+.boton:hover {
+    color: var(--azul-terciario);
+    background-color: var(--color-terciario);
+    border:0;
+    box-shadow: var(--sombra-boton);
+    outline: none;
+}
+
+.boton:active {
+    color: var(--azul-terciario);
+    background-color: var(--color-terciario);
+    border:0;
+    box-shadow: var(--sombra-boton);
+    outline: none;
+}
+
+
+
+
+
+.modal{
+    display: grid;
+    position: fixed;    
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 10fr;
+    grid-template-areas:
+        "boton"
+        "inner";
+    background-color:var(--color-secundario);
+    width: 80%;
+    height: 90vh;
+    margin: 5% 10%;
+    box-shadow: 0px 10px 20px -5px var(--oscuro-transparente);
+    border-radius: 5px 5px 5px 5px;
+    border-width: 0.05rem;
+    border-style: solid;
+    border-color: darkgray;
+}
+
+.boxBotonCerrado{
+    grid-area:boton;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: center-start;
+    width: 100%;
+}
+
+.botonCerrado{
+    width: 3rem;
+    height: 1.7rem;
+    background-color: var(--rojo-secundario);
+    border-radius: 1px;
+    border:0;
+    margin: 0.5rem 1.5rem;
+    outline: none;
+}
+
+
+.botonCerrado:hover {
+    background-color: var(--rojo-terciario);
+    border:0;
+    box-shadow: var(--sombra-boton);
+    outline: none;
+}
+
+.botonCerrado:active {
+    background-color: var(--rojo-primario);
+    color: var(--color-primario);
+    border:0;
+    box-shadow: var(--sombra-boton);
+    outline: none;
+}
+
+.innerModal{
+    background-color:var(--color-primario);
+    display: grid;
+    grid-area: inner;
+    height: 80vh;
+    width: 90%;
+    padding: 2rem;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 3fr 1.8fr 1fr 2.5fr;
+    grid-gap: 0.6rem;
+    margin: 0% 5%;
+    grid-template-areas: 
+    "imagenModal descripcionModal"
+    "nombreModal descripcionModal"
+    "misionModal descripcionModal"
+    "creditosModal descripcionModal"
+    ;
+}
+
+.imagenModal{
+    grid-area: imagenModal;
+    background-color:var(--color-primario);
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 10px 20px -5px var(--oscuro-transparente);
+}
+
+.nombreModal{
+    grid-area: nombreModal;
+    height: 100%;
+    overflow: auto;
+    background-color:var(--color-primario);
+    box-shadow: 0px 10px 20px -5px var(--oscuro-transparente);
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+
+    font-family: Work Sans;
+    font-weight: 700;
+    font-size: 120%;   
+}
+
+.misionModal{
+    grid-area: misionModal;
+    height: 100%;
+    overflow: auto;
+    background-color:var(--color-primario);
+    box-shadow: 0px 10px 20px -5px var(--oscuro-transparente);
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: 100%;
+    letter-spacing: 0.1rem;
+}
+
+.creditosModal{
+    grid-area: creditosModal;
+    height: 100%;
+    overflow: auto;
+    background-color:var(--color-primario);
+    box-shadow: 0px 10px 20px -5px var(--oscuro-transparente);
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: 100%;
+    letter-spacing: 0.1rem;
+}
+
+.descripcionModal{
+    grid-area: descripcionModal;
+    background-color:var(--color-primario);
+    height: 100%;
+    overflow: auto;
+    text-align: justify;
+    padding: 1rem 0.5rem 1rem 1rem;
+    border-radius: 3px;
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: 100%;
+    letter-spacing: 0.1rem;
+}
+
+.descripcionModal::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+
+
+
+.videoReducido{
+    background-color:var(--color-primario);
+    display: grid;
+    height: 35rem;
+    width: 30rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 2fr 0.5fr;
+    margin-top: 4rem;
+    box-shadow: 0px 10px 20px -5px var(--oscuro-transparente);  
+    border-radius: 5px 5px 5px 5px;  
+    grid-template-areas: 
+    "video_Video"
+    "video_Datos"
+    "video_Boton"
+    ;
+}
+
+.videoExpandido{
+    background-color:var(--color-primario);
+    display: grid;
+    height: auto;
+    width: 30rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 0.2fr;
+    margin-top: 4rem;
+    box-shadow: 0px 10px 20px -5px var(--oscuro-transparente);  
+    border-radius: 5px 5px 5px 5px;  
+    grid-template-areas: 
+    "video_Video"
+    "video_Datos"
+    "video_Boton"
+    ;
+}
+
+.video_Video{
+    grid-area: video_Video;
+    display: flex;
+    justify-content: center;
+    text-justify: center;
+    width: 30rem;
+    height: 100%;
+    border: none;
+}
+
+
+.video_Boton{
+    grid-area: video_Boton;
+    width: 100%;
+    height: 100%;
+    color:black;
+    border:0;
+    outline: none;
+    border-radius: 0px 0px 5px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--azul-secundario);
+    padding:1rem 0rem;
+
+    font-size: medium;
+    font-family: Quicksand;
+    font-weight: 700;
+    font-size: 110%;
+    letter-spacing: 0.1rem;
+}
+
+.video_Boton:hover {
+    color:black;
+    background-color: var(--azul-terciario);
+    border:0;
+    outline: none;
+}
+
+.video_Boton:active {
+    color:white;
+    background-color: var(--azul-terciario);
+    border:0;
+    box-shadow: var(--sombra-boton);
+    outline: none;
+}
+
+
+
+.video_Datos{
+    grid-area: video_Datos;
+    display: grid;
+    width: 30rem;
+    height: auto;
+    grid-gap: 0.5rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 2fr 1fr 0.5fr;
+    grid-template-areas: 
+    "video_Titulo"
+    "video_Descripcion"
+    "video_Creditos"
+    "video_Mision"
+    ;
+    overflow: hidden;
+    box-shadow: var(--sombra-caja-interna);
+}
+
+
+.video_Datos_Expandido{
+    grid-area: video_Datos;
+    display: grid;
+    width: 30rem;
+    height: 25rem;
+    grid-gap: 0.5rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.8fr 1fr 0.5fr;
+    grid-template-areas: 
+    "video_Titulo"
+    "video_Descripcion"
+    "video_Creditos"
+    "video_Mision"
+    ;
+    overflow: visible;
+    box-shadow: var(--sombra-caja-interna);
+}
+
+.video_Titulo{
+    grid-area: video_Titulo;
+    display: inline-block;
+    width: 30rem;
+    height: 100%;
+    
+    padding: 1rem;
+    font-size: medium;
+    font-family: Work Sans;
+    font-weight: 900;
+    font-size: 140%;
+    text-shadow: -1px 1px 1px darkgrey;    
+    letter-spacing: 0.1rem;
+
+}
+
+.video_Descripcion{
+    grid-area: video_Descripcion;
+
+    
+    align-items: start;
+    text-align: justify;
+
+    width: 30rem;
+    height: 100%;
+    min-height: 8rem;
+    padding: 0rem 2rem;
+
+    color:black;
+    font-family: Raleway;
+    font-weight: 900;
+    font-size: 100%;
+    font-style: italic;
+    letter-spacing: 0.1rem;
+}
+
+.video_Creditos{
+    grid-area: video_Creditos;
+
+    align-items: start;
+    text-align: justify;
+
+    width: 30rem;
+    height: 100%;
+    overflow: auto;
+    padding: 0rem 2rem;
+
+    color:black;
+    font-family: Quicksand;
+    font-weight: 700;
+    font-size: 90%;
+
+}
+
+.video_Mision{
+    grid-area: video_Mision;
+
+    align-items: flex-start;
+    text-align: justify;
+
+    width: 30rem;
+    height: 100%;
+    overflow: auto;
+    padding: 0rem 2rem;
+
+    color:black;
+    font-family: Quicksand;
+    font-weight: 700;
+    font-size: 90%;
+
+}
+
+
+
+
+
+
+
+.termino_Tarjeta{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas: 
+    "terminoNombre"
+    "terminoDefinicion"
+    "terminofuente"
+    ;
+
+    margin: 3rem 0rem 0rem 0rem;
+    width:100%;
+    height: 10rem;
+    grid-gap: 0.5rem;
+    padding: 0.7rem;
+
+
+    background: var(--rojo-secundario);
+    box-shadow: 0px 10px 20px -5px var(--oscuro-transparente);
+    border-radius: 5px;
+
+}
+
+.termino_Nombre{  
+    grid-area: terminoNombre;
+    
+    align-items: start;
+    text-align: justify;
+
+    width: 100%;
+    height: 100%;
+    padding-right: 0.83rem;
+    padding-left: 1rem;
+
+    color:black;
+    font-family: Work Sans;
+    font-weight: 700;
+    font-size: 110%;
+    letter-spacing: 0.07rem;
+}
+
+.termino_Definicion{
+    grid-area: terminoDefinicion;
+    
+    align-items: start;
+    text-align: justify;
+
+    width: 100%;
+    height: 100%;
+    padding-right: 0.83rem;
+    padding-left: 1rem;
+
+    color:white;
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: 100%;
+    font-style: italic;
+    overflow: auto;
+
+}
+
+.termino_Definicion::-webkit-scrollbar {
+    display: none;
+}
+
+.termino_Url{
+    grid-area: terminofuente;
+    
+    align-items: start;
+
+    width: 100%;
+    height: 100%;
+    padding-right: 0.83rem;
+    padding-left: 1rem;
+
+    color:black;
+    font-family: Quicksand;
+    font-weight: 700;
+    font-size: 100%;
+    letter-spacing: 0.1rem;
+    letter-spacing: 0.07rem;
+    text-decoration: none;
+    outline: none;
+
+}
+
+
+.termino_Url:hover {
+    color:white;
+    border:0;
+    text-decoration: none;
+    outline: none;
+}
+
+.termino_Url:active {
+    color:darkgrey;
+    border:0;
+    text-decoration: none;
+    outline: none;
+}
+
+
+
+
+.NoticiaHubbleMiniatura{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas: 
+    "MinituraFecha"
+    "MinituraTitulo"
+    "MinituraBoton"
+    ;
+    margin: 3rem 0rem 0rem 0rem;
+    width:100%;
+    height: 10rem;
+    display: grid;
+    background-color: var(--color-primario);
+    box-shadow: 0px 10px 20px -5px var(--oscuro-transparente);
+    border-radius: 5px;
+    border-width: 0.05rem;
+    border-style: solid;
+    border-color: lightgray;
+    overflow: auto;
+}
+
+.FechaNoticiaHubbleMiniatura{
+    grid-area: MinituraFecha;
+    width: 100%;
+    height: 100%;  
+    padding: 0.5rem 1rem; 
+}
+
+.TitloNoticiaHubbleMiniatura{
+    grid-area: MinituraTitulo;
+    width: 100%;
+    height: 100%; 
+    padding: 1rem;
+    justify-content: space-between;
+    font-family: Work Sans;
+    font-weight: 500;
+    font-size: 110%;  
+    background-color: var(--color-secundario);  
+}
+
+.botonNoticia{
+    grid-area: MinituraBoton;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-secundario);
+    border-radius: 0px 0px 5px 5px;
+    border:0;
+    font-weight: bold;
+    color:black;
+    outline: none;
+
+}
+
+.botonNoticia:hover {
+    color:black;
+    background-color: var(--color-terciario);
+    border:0;
+    outline: none;
+}
+
+.botonNoticia:active {
+    color:var(--color-primario);
+    background-color: var(--color-terciario);
+    border:0;
+    box-shadow: var(--sombra-boton);
+    outline: none;
+}
+
+
+.NoticiaHubbleExpandida{   
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 1fr 4fr 1.5fr 2fr 13fr 1fr;
+    grid-template-areas: 
+    "MinituraFecha MinituraFecha"
+    "ExpandidaFoto MinituraTitulo"
+    "Mision Mision"
+    "ExpandidaEnlace ExpandidaEnlace"
+    "Abstract Abstract"
+    "MinituraBoton MinituraBoton"
+    ; 
+    margin-top: 3rem;
+    width:100%;
+    height: 40rem;
+    display: grid;
+    background-color: var(--color-secundario);
+    box-shadow: 0px 10px 20px -5px var(--oscuro-transparente);
+    border-radius: 5px;
+    border-width: 0.05rem;
+    border-style: solid;
+    border-color: lightgray;
+}
+
+.NoticiaHubblerExpandida_Imagen{
+    grid-area: ExpandidaFoto;
+    padding:1rem;
+    width:100%;
+    height: 100%;
+}
+
+.NoticiaHubblerExpandida_Abstract{
+    overflow: auto;
+    grid-area:Abstract;
+    text-align: justify;
+    margin: 2.5rem 1rem;
+    padding-right: 0.83rem;
+    padding-left: 1rem;
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: 100%;
+    font-style: italic;
+    letter-spacing: 0.07rem;
+}
+
+.NoticiaHubblerExpandida_Abstract::-webkit-scrollbar {
+    display: none;
+}
+
+.NoticiaHubblerExpandida_Mission{
+    grid-area: Mision;
+    overflow: auto;
+    padding: 0.5rem;
+    text-align: center;
+    
+}
+
+.NoticiaHubblerExpandida_Link{
+    grid-area: ExpandidaEnlace;
+    padding: 0.5rem 1rem;
+    margin: 0.7rem 1rem;
+    border-radius: 3px;
+    background-color: var(--azul-secundario);
+    text-align: center;
+    font-weight: 1000;
+    text-decoration: none;
+    color: black;
+    outline: none;
+}
+
+.NoticiaHubblerExpandida_Link:hover {
+    color: var(--color-primario);
+    border:0;
+    outline: none;
+}
+
+.NoticiaHubblerExpandida_Link:active {
+    color: var(--color-primario);
+    background-color: var(--azul-primario);
+    border:0;
+    box-shadow: var(--sombra-boton);
+    outline: none;
+}
